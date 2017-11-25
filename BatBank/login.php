@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include("dbconnection.php");
+include("connect.php");
 
 if(($_REQUEST['error'])=='nologin')
     $logininfo="Please Sign In to Continue";
