@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 $error=$_REQUEST['error'];
-include("dbconnection.php");
+include("connect.php");
 if(isset($_SESSION['customerid']))
 {
 	header("Location: accountalerts.php"); exit(0);
