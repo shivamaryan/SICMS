@@ -40,7 +40,7 @@ if(isset($_SESSION['adminid']))
     <ul id="nav">
         <li><a href="index.php">Home</a></li>
         <li><a href="login.php">Login</a></li>
-        <li><a href="branches.php">Branch</a></li>
+        <li><a href="branches.php">Index Card</a></li>
         <li><a href="help.php">Help & FAQ</a></li>
         <li><a href="">Downloads</a>
             <ul>
@@ -88,11 +88,10 @@ if(isset($_SESSION['adminid']))
             </div>
              <div class="ex"><div class="heading">ANNOUNCEMENTS</div><br/><div class="low">
                          <ul style="list-style-type:none;">
-                         <li class="one">Board meeting on 11/07/2013<br/><br/></li>
-                         <li class="two">Withdrawal limit of ATM rises<br/> from Rs 25000 to Rs 40000<br/><br/></li>
-                         <li class="three">Annual return forms available at<br/> your nearest branches now.<br/><br/></li>
-                         <li class="four">Fill your E-tax forms and submit<br/> within 30th July<br/><br/></li>
-                         <li class="five">New account for BPL certificate <br/> holders for only 100Rs.<br/></li>
+                         <li class="one">Last date of form filling for<br>S1 students is 10/10/2018<br/><br/></li>
+                         <li class="two">Dates are nearing for S5 to <br> finish updations.<br/><br></li>
+                         <li class="three">All the best for coming<br/>  University exams<br/><br/></li>
+                         <li class="four">Strive towards a ragging<br/> free CUSAT campus<br/><br/></li>
                          </ul>
                           
                  
@@ -100,11 +99,10 @@ if(isset($_SESSION['adminid']))
      </div>
     <hr/><br/>
          <div class="home">
-             <div class="begin"> <h2><a href="Register.php">Register For SICMS (First Time Users only)</a></h2> <br/>
-                Now monitor, transact and control your bank account online through our net banking service. 
-             You can do multiple things from the comforts of your home or office with our Internet Banking - a one stop solution
-             for all your banking needs.You can now get all your accounts details, submit requests and undertake a wide range of transactions online. Our E-Banking service 
-             makes banking a lot more easy and effective.</div><br/><br/>
+             <div class="begin"> <h2><a href="Register.php">Register For SICMS (First Time Student User only)</a></h2> <br/>
+                With the advent of digitization , it is high time that we move on from paper-work even in academic sectors. SICMS aims to provide a digital platform for details of each student of each branch. Academic details are also stored and updated on a regular basis. These details have a large use case such as in placements, result analysis,strength and weakness analysis etc. 
+                    With a system with bare requirements and a good internet connection the student can edit and update the details without the hassle of long queues. Faculties, also on the other hand can keep track of progress easily. 
+                </div><br/><br/>
             <!--  <span id="feat" ><b><u>Features</u></b></span><br/><br/>
              <ul style="padding-left:2em;list-style-image:url('images/next_blue.png');align:middle;"><li><span class="subhead">Account Details</span><br/><br/>View your bank account details, account balance, download statements and more. Also view your Demat, 
                      Loan & Credit Card Account Details too all in one place.</li><br/>

@@ -239,8 +239,10 @@ body {
   display:block;
   padding-bottom:0px;
 }
-
+  
 .loginput[type=text],
+.loginput[type=select],
+.loginput[type=email],
 .loginput[type=password], #Comment {
     color:#ffff99;
  	width:100%;
