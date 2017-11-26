@@ -58,7 +58,7 @@ if (isset($_SESSION['employeeid']))
 </div>
 </div>
      <div class="logmainbox" style="width: 480px;">
-        <form method="POST" action="student_signup.php">
+        <form method="POST" action="academic.php">
             <h1>Index Card Information</h1>
             <div class="inset">
                 <table>
@@ -100,7 +100,7 @@ if (isset($_SESSION['employeeid']))
                           <td><input type="text" name="branch" class="loginput"></td>
                         </tr>
                         <tr>
-                          <td><label class="Ltext">Date of Birth</label></td>
+                          <td><label class="Ltext">DOB(DD/MM/YYYY)</label></td>
                           <td><input type="text" name="dob" class="loginput"></td>
                         </tr>
                         <tr>
@@ -112,7 +112,7 @@ if (isset($_SESSION['employeeid']))
                           <td><input type="text" name="sex" class="loginput"></td>
                         </tr>
                         <tr>
-                          <td><label class="Ltext">Contact Number</label></td>
+                          <td><label class="Ltext">Contact Number </label></td>
                           <td><input type="text" name="contact_no" class="loginput"></td>
                         </tr>
                         <tr>
@@ -332,7 +332,7 @@ if (isset($_SESSION['employeeid']))
                     
                 </table> -->
             </div>
-                    <input type="submit" value="Register" style="margin-bottom:25px;margin-right: 190px;" class="loginput" align="center">
+                    <input type="submit" value="Proceed towards filling Academic Details" style="margin-bottom:25px;margin-right:100px;" class="loginput" align="center">
         </form>
     </div>
     </div>
