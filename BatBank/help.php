@@ -24,7 +24,7 @@ if (isset($_SESSION['employeeid']))
 <link href="images/favicon.ico" rel="shortcut icon">
 </head>
 <body>
-    <img id="contain" src="images/soe.jpg">
+     <img id="contain" src="images/soe1.jpg"> 
     <!--<div><img src="images/soe.jpg" id="batimg1"><img src="images/batman1.png" id="batimg2"></div> -->
     <div id="bodycontent">
 
@@ -43,16 +43,15 @@ if (isset($_SESSION['employeeid']))
     <ul id="nav">
         <li><a href="index.php">Home</a></li>
         <li><a href="login.php">Login</a></li>
-        <li><a href="branches.php">Branches</a></li>
+        <li><a href="branches.php">Index Card</a></li>
         <li><a href="help.php">Help & FAQ</a></li>
         <li><a href="">Downloads</a>
             <ul>
-                <li><a href="downloads/New_Account.pdf">University Exams</a></li>
-                 
-                  <li><a href="downloads/ChequeBook_Request.pdf">Attendance Shortage</a></li>
+                <li><a href="downloads/reval.pdf">Revaluation Form</a></li>
+                <li><a href="downloads/provisional.pdf">Provisional Form</a></li>
             </ul>
-        </li> 
-        <li><a href="contactus.php">Contact Us</a></li>
+        </li>
+        <li><a href="contactus.php">Placement Queries</a></li>
     </ul>
     
 </div>
@@ -61,36 +60,16 @@ if (isset($_SESSION['employeeid']))
      <span class="helpheading">FREQUENTLY ASKED QUESTIONS..</span>
          <div id="faq">
              
-                 <p class="q">1.&nbsp;&nbsp;&nbsp;&nbsp;What is Inter Bank Fund Transfer?</p>
-<p>Ans::Inter Bank Transfer is a special service that allows you to transfer funds from your account with a Bank, to a Bank account with any other Bank in India.</td>
+                 <p class="q">1.&nbsp;&nbsp;&nbsp;&nbsp;How should I use this portal?</p>
+<p>Ans::If you are a first time user, register from the homepage, else fill in the details on Index Card.</td>
 
-<p class="q">2.&nbsp;&nbsp;&nbsp;&nbsp;Can I transfer funds to an account in any Bank Branch in India through RTGS/NEFT?</p>
-<p>Ans::NEFT -The acronym "NEFT" stands for National Electronic Funds Transfer. Funds are transferred to the credit account with the other participating Bank using RBI's NEFT service. RTGS -The acronym "RTGS" stands for Real Time Gross Settlement. The RTGS system facilitates transfer of funds from accounts in one bank to another on a "real time". The RTGS system is the fastest possible interbank money transfer facility available through secure banking channels in India.
-The fund transfer through RTGS/NEFT can be done ONLY to any RTGS/NEFT enabled Bank Branch in India.</p>
-<p class="q">3.&nbsp;&nbsp;&nbsp;&nbsp;Are there any BANK CHARGES levied for Online Interbank Fund Transfer through RTGS/NEFT?</p>
-<p>Ans::Presently,our Bank do NOT levy any CHARGES for Online Interbank Fund Transfer through RTGS/NEF done from our Internet Banking Services.</p>
-<p class="q">4.&nbsp;&nbsp;&nbsp;&nbsp;What is the mandatory requirement for doing an Online Interbank Fund Transfer through RTGS/NEFT?</p>
-<p>Ans::The following information about the Beneficiary is mandatory -
-Beneficiary Name
-Beneficiary Address
-Beneficiary Account Number
-Beneficiary Account Type (only in case of NEFT)
-IFSC Code of the Beneficiary's Bank Branch</p>
-<p class="q">5.&nbsp;&nbsp;&nbsp;&nbsp;What are the timings for doing these Transactions?</p>
-<p>Ans::Presently, the NEFT transactions can be done any time, however, credits to the beneficiary account shall be on same day/ immediate next working depending on the time of payment and beneficiary bank. Presently, the RTGS timings* on any given working day is as under -
-Week Days 09:15 a.m. - 03:45 pm
-Saturday 09:15 a.m. - 11:45 a.m.
-*Timings, above are subject to change
-</p>
-<p class="q">6.&nbsp;&nbsp;&nbsp;&nbsp;Where do I find IFSC Code?</p>
-<p>Ans::IFSC Code can be found on our Internet Banking Site, during the addition of Beneficiary based on the Beneficiary's Bank. Alternatively, it can also be found at our site.
+<p class="q">2.&nbsp;&nbsp;&nbsp;&nbsp;What else can a student do?</p>
+<p>Ans::Students have to also update the Academic details for every semester, by just logging in, which lands on the results page. </p>
+<p class="q">3.&nbsp;&nbsp;&nbsp;&nbsp;What role does the admin play, and who is he/she?</p>
+<p>Ans::The admin alone has the right to update some of the details, such as, GPA, Project details, etc</p>
+<p class="q">4.&nbsp;&nbsp;&nbsp;&nbsp;I see a Placement Queries at the top right. What do you mean by that and who can use that?</p>
+<p>Ans::It can be used to simplfy the initial round screening process in Placement season. Anybody can access the details, based on GPA criteria, backlogs, etc</p>
 
-</p>
-<p class="q">7.&nbsp;&nbsp;&nbsp;&nbsp;What happens to the transaction, if the beneficiary details provided are incorrect OR erroneously beneficiary details are provided are incorrect?</p>
-<p>Ans::Bank does not verify the Beneficiary Details given for outward NEFT transaction, and its fate entirely depends upon the Beneficiary Bank. If the beneficiary details provided matches at the Beneficiary Bank, the credit will be passed on, as per the details. But, in case the Beneficiary Bank rejects the transaction, for ANY reason, the customer account will be credited.
-</p>
-<p class="q">8.&nbsp;&nbsp;&nbsp;&nbsp;How should I avail this facility?</p>
-<p>Ans::</p>
  </div>
     </div> <!-- end of main -->
     </div>

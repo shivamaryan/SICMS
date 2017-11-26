@@ -103,7 +103,7 @@ ini_set("display_errors", 1);
 <link href="images/favicon.ico" rel="shortcut icon">
 </head>
 <body>
-    <img id="contain" src="images/soe.jpg">
+     <img id="contain" src="images/soe1.jpg"> 
     <!--<div><img src="images/soe.jpg" id="batimg1"><img src="images/batman1.png" id="batimg2"></div> -->
     <div id="bodycontent">
 
@@ -122,16 +122,15 @@ ini_set("display_errors", 1);
     <ul id="nav">
         <li><a href="index.php">Home</a></li>
         <li><a href="login.php">Login</a></li>
-        <li><a href="branches.php">Branches</a></li>
+        <li><a href="branches.php">Index Card</a></li>
         <li><a href="help.php">Help & FAQ</a></li>
         <li><a href="">Downloads</a>
             <ul>
-                <li><a href="downloads/New_Account.pdf">University Exams</a></li>
-                 
-                  <li><a href="downloads/ChequeBook_Request.pdf">Attendance Shortage</a></li>
+                <li><a href="downloads/reval.pdf">Revaluation Form</a></li>
+                <li><a href="downloads/provisional.pdf">Provisional Form</a></li>
             </ul>
-        </li> 
-        <li><a href="contactus.php">Contact Us</a></li>
+        </li>
+        <li><a href="contactus.php">Placement Queries</a></li>
     </ul>
     
 </div>

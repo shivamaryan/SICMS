@@ -118,7 +118,7 @@
 <link href="images/favicon.ico" rel="shortcut icon">
 </head>
 <body>
-    <img id="contain" src="images/soe.jpg">
+     <img id="contain" src="images/soe1.jpg"> 
     <!--<div><img src="images/soe.jpg" id="batimg1"><img src="images/batman1.png" id="batimg2"></div> -->
     <div id="bodycontent">
 
@@ -137,16 +137,15 @@
     <ul id="nav">
         <li><a href="index.php">Home</a></li>
         <li><a href="login.php">Login</a></li>
-        <li><a href="branches.php">Branches</a></li>
+        <li><a href="branches.php">Index Card</a></li>
         <li><a href="help.php">Help & FAQ</a></li>
         <li><a href="">Downloads</a>
             <ul>
-                <li><a href="downloads/New_Account.pdf">University Exams</a></li>
-                 
-                  <li><a href="downloads/ChequeBook_Request.pdf">Attendance Shortage</a></li>
+                <li><a href="downloads/reval.pdf">Revaluation Form</a></li>
+                <li><a href="downloads/provisional.pdf">Provisional Form</a></li>
             </ul>
-        </li> 
-        <li><a href="contactus.php">Contact Us</a></li>
+        </li>
+        <li><a href="contactus.php">Placement Queries</a></li>
     </ul>
     
 </div>
@@ -159,7 +158,7 @@
                      {  echo"<div class='logmainbox' style='width:450px;'><h1>$errorinfo</h1></div>"; } 
               ?>       
      <div class="logmainbox" style="width: 480px;">
-        <form method="POST" action="branches.php">
+      <form method="POST" action="academic.php">
             <h1>Index Card Information</h1>
             <div class="inset">
                 <table>
@@ -201,7 +200,7 @@
                           <td><input type="text" name="branch" class="loginput"></td>
                         </tr>
                         <tr>
-                          <td><label class="Ltext">Date of Birth</label></td>
+                          <td><label class="Ltext">DOB(DD/MM/YYYY)</label></td>
                           <td><input type="text" name="dob" class="loginput"></td>
                         </tr>
                         <tr>
@@ -213,7 +212,7 @@
                           <td><input type="text" name="sex" class="loginput"></td>
                         </tr>
                         <tr>
-                          <td><label class="Ltext">Contact Number</label></td>
+                          <td><label class="Ltext">Contact Number </label></td>
                           <td><input type="text" name="contact_no" class="loginput"></td>
                         </tr>
                         <tr>
@@ -433,7 +432,9 @@
                     
                 </table> -->
             </div>
-                    <input type="submit" name="submit" value="Register" style="margin-bottom:25px;margin-right: 190px;" class="loginput" align="center">
+
+                    <input type="submit" value="Proceed towards filling Academic Details" style="margin-bottom:25px;margin-right:100px;" class="loginput" align="center">
+
         </form>
     </div>
     </div>

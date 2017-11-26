@@ -239,6 +239,14 @@ body {
   display:block;
   padding-bottom:0px;
 }
+
+.Ltext2 {
+    color:darkmagenta;
+        font-size: 20px;
+        font-family: "Berkshire Swash",cursive;
+  display:block;
+  padding-bottom:0px;
+}
   
 .loginput[type=text],
 .loginput[type=select],
