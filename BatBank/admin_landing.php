@@ -36,6 +36,95 @@
         </li>
         <li><a href="contactus.php">Placement Queries</a></li>
     </ul>
+
+    <div class="logmainbox" style="width: 480px;">
+        <form method="POST" action="student_signup.php">
+            <h1>Extra Details Filling Page</h1>
+            <div class="inset">
+                <table> 
+                        <tr>
+                          <td><label class="Ltext">Admission No</label></td>
+                          <td><input type="text" name="admno" class="loginput"></td>
+                        </tr>
+
+                        <tr>
+                          <td><label class="Ltext">Co-Curricular Activities</label></td>
+                        </tr>
+                        <tr>
+                            <td class="Ltext">Activity 1 </td>
+                            <td><input type="text" name="cocur1" class="loginput"></td>
+                        </tr>
+                        <tr>
+                            <td class="Ltext">Activity 2 </td>
+                            <td><input type="text" name="cocur2" class="loginput"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="Ltext">Activity 3</td>
+                            <td><input type="text" name="cocur3" class="loginput"></td>
+                        </tr>
+
+
+                        <tr>
+                          <td><label class="Ltext">GPA</label></td>
+                          <td><input type="text" name="gpa" class="loginput"></td>
+                        </tr>
+
+                        <tr>
+                          <td><label class="Ltext">Gate Score</label></td>
+                          <td><input type="text" name="gatescr" class="loginput"></td>
+                        </tr>
+
+                    
+
+                    
+                        <tr>
+                            <td><h2 class="Ltext">Mini Project</p></td>
+
+                        </tr>
+                        
+                        <tr>
+                          <td><label class="Ltext">Name</label></td>
+                          <td><input type="text" name="miname" class="loginput"></td>
+                        </tr>
+
+                        <tr>
+                          <td><label class="Ltext">Project Guide</label></td>
+                          <td><input type="text" name="minguid" class="loginput"></td>
+                        </tr>
+
+                        <tr>
+                          <td><label class="Ltext">Remarks</label></td>
+                          <td><input type="text" name="minrem" class="loginput"></td>
+                        </tr>
+
+                         <tr>
+                            <td><h2 class="Ltext">Major Project</p></td>
+
+                        </tr>
+
+                        <tr>
+                          <td><label class="Ltext">Name</label></td>
+                          <td><input type="text" name="majname" class="loginput"></td>
+                        </tr>
+
+                        <tr>
+                          <td><label class="Ltext">Project Guide</label></td>
+                          <td><input type="text" name="majguid" class="loginput"></td>
+                        </tr>
+
+                        <tr>
+                          <td><label class="Ltext">Remarks</label></td>
+                          <td><input type="text" name="majrem" class="loginput"></td>
+                        </tr>
+
+
+                    </table>
+            </div>
+                    <input type="submit" value="Update Extra Details" style="margin-bottom:25px;margin-right: 160px;" class="loginput" align="center">
+        </form>
+    </div>
+    </div>
     
 </div>
 </div>
