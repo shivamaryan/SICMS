@@ -1,18 +1,99 @@
 <?php
-session_start();
-error_reporting(0);
-$error=$_REQUEST['error'];
-include("connect.php");
-if(isset($_SESSION['customerid']))
-{
-	header("Location: accountalerts.php"); exit(0);
-}
-if(isset($_SESSION['adminid']))
-{
-    header("Location: admindashboard.php");
-}
+    error_reporting(E_ALL);
+ini_set("display_errors", 1);
+    if(isset($_POST['submit']))
+    {
+        include('connect.php');
+        $email     = $_POST['email'];
+        $user     = $_POST['user'];
+        $pass     = $_POST['pass'];
+        $admn     =$_POST['admission_no'];
+        $first_name    = $_POST['first_name'];
+        $last_name=$_POST['last_name'];
+        $contact = $_POST['contact'];
+        $identify=1;
+
+        function validate_password($pass) 
+        {
+            $uppercase = '/[A-Z]/';
+            $lowercase = '/[a-z]/';
+            $special_chars = '/[!@#$%^&*()\-_=+{};:,<.>]/';
+            $numerics = '/[0-9]/';
+
+            // Check if it has uppercase letters.
+            if (preg_match_all($uppercase, $pass, $matches) < 1) return false;
+
+
+            // Check if it has lowercase letters.
+            if(preg_match_all($lowercase, $pass, $matches) < 1) return false;
+
+            // Check if it has special characters.
+           if(preg_match_all($special_chars, $pass, $matches) < 1) return false;
+
+            // Check if it has numeric characters.
+           if(preg_match_all($numerics, $pass, $matches) < 1) return false;
+
+            // Check if it has atleast 8 characters.
+            if(strlen($pass) < 8) return false;
+
+            return true;
+        }
+        
+        $sqlinsert ="INSERT INTO student_login 
+        (userid,first_name,last_name,password,admission_no,email,contact,identify)
+        VALUES ('$user','$first_name','$last_name','$pass','$admn','$email','$contact','$identify')"; 
+
+
+        if (!empty($user))
+        {
+             if (preg_match("/[^A-Za-z]/", $user)) 
+             {
+                $signupinfo="Invalid username. Username should be alpha";
+             }
+        }
+         else 
+        {
+            $signupinfo="Username should not be empty!";
+        }
+        if (!empty($_POST["pass"]))
+        {
+            $status = validate_password($_POST["pass"]);
+            if (!$status)
+                {
+                    $signupinfo="Invalid password. Password should include atleast one upppercase, one lowercase, one numeric, one special character and alteast 8 characters";
+                }
+            else
+            {
+                 if (!empty($_POST["confirm_password"]))
+                {
+                    
+                    if ($_POST["pass"] != $_POST['confirm_password'])
+                    $signupinfo="Passwords are not matching";
+                    else
+                    {
+                        if(!mysqli_query($con,$sqlinsert))
+                        $signupinfo="error inserting new record";
+                            
+                        $newrecord='Your account has been successfully created';    
+                    }
+                   
+                } 
+                else 
+                {
+                    $signupinfo="<p>Confirm Password should not be empty!";
+                }
+            }
+        }
+        else 
+        {
+            $signupinfo="Password should not be empty!";           
+        }
+
+    }
+
 
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 <link href="images/favicon.ico" rel="shortcut icon">
@@ -54,55 +135,29 @@ if(isset($_SESSION['adminid']))
     
 </div>
 </div>
-        <?php
-         if($error==1)
-            { ?> <div class="mainbox" style="width:550px;"><h1 style="font-size: 30px;">Data Missing or Invalid</h1><br/>
-                  <ul style="color:#0FF; font-family:'The Girl Next Door',cursive; font-size: 20px; line-height: 20px; padding-left: 3em;">
-                      <?php if($_REQUEST['fnameset']==1)
-                            {
-                                echo"<li>First Name cannot start with space or left blank</li>";
-                            }
-                            if($_REQUEST['lnameset']==1)
-                            {
-                                echo"<li>Last Name cannot start with space or left blank</li>";
-                            }
-                            if($_REQUEST['emailset']==1)
-                            {
-                                echo"<li>IFSC CODE should be valid, It needs to be verified</li>";
-                            }
-                            if($_REQUEST['pwdset']==1)
-                            {
-                                echo"<li>Password cannot be left blank or contain special character</li>";
-                            }
-                            if($_REQUEST['unameset']==1)
-                            {
-                                echo"<li>Login ID cannot contain blank or special character</li>";
-                            } ?>
-                       </ul></div> <?php }
-        if($error==2)
-                echo"<div class=\"mainbox\" style=\"width:450px;\"><h1 style=\"font-size: 30px;\">Password Mismatch</h1></div>";
-        if($error==3)
-                echo"<div class=\"mainbox\" style=\"width:450px;\"><h1 style=\"font-size: 30px;\">Login Id / Account No. Already Exist</h1></div>";
-       if($error==4)
-                echo"<div class=\"mainbox\" style=\"width:450px;\"><h1 style=\"font-size: 30px;\">Cannot verify this Email-Id</h1></div>";
-        ?>
-        
-        <?php if($_REQUEST['success']==1) { ?> <div class="logmainbox" style="width: 480px;"><h1>Registered Successfully</h1></div> <?php } ?>
-                    
+               <?php if(isset($signupinfo))
+    {  echo"<div class='logmainbox' style='width:450px;'><h1>$signupinfo</h1></div>"; } ?>       
         
     <div class="logmainbox" style="width: 480px;">
-        <form method="POST" action="student_signup.php">
+        <form method="POST" action="Register.php">
             <h1>Sign Up Form</h1>
             <div class="inset">
                 <table>
-                    <tr>
-                        <td><label for="Fname" class="Ltext">Name</label></td>
+                    <<tr>
+                        <td><label for="Fname" class="Ltext">Firstname</label></td>
                         <td>
-                            <input type="text" name="name" id="name" class="loginput"<?php if (($_REQUEST["fnameset"]==1)) echo " style=\"border:thin solid red; box-shadow:1px 1px 4px 2px #F00;\"";
-                                        else echo " value=\"".$_REQUEST["Fname"]."\""; ?> >
+                            <input type="text" name="first_name" class="loginput" placeholder="Firstname" />
                                        
                         </td>
                     </tr>
+                    <tr>
+                        <td><label for="Fname" class="Ltext">Lastname</label></td>
+                        <td>
+                            <input type="text" name="last_name" class="loginput" placeholder="Lastname" />
+                                       
+                        </td>
+                    </tr>
+
                         <tr>
                             <td><label class="Ltext">Username</label></td>
                             <td><input name="user" type="text" class="loginput" placeholder="Username"/> </td>
@@ -130,9 +185,13 @@ if(isset($_SESSION['adminid']))
                     
                 </table>
             </div>
-                    <input type="submit" value="Register" style="margin-bottom:25px;margin-right: 190px;" class="loginput" align="center">
+                    <input type="submit" name="submit"value="Register" style="margin-bottom:25px;margin-right: 190px;" class="loginput" align="center">
         </form>
+
     </div>
     </div>
+ <?php if(isset($newrecord))
+    {  echo"<div class='logmainbox' style='width:450px;'><h1>$newrecord</h1></div>"; } ?> 
+
 </body>
 </html>
