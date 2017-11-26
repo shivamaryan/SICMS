@@ -30,8 +30,8 @@
         <li><a href="help.php">Help & FAQ</a></li>
         <li><a href="">Downloads</a>
             <ul>
-                <li><a href="downloads/New_Account.pdf">University Exams</a></li>
-                <li><a href="downloads/ChequeBook_Request.pdf">Attendance Shortage</a></li>
+                <li><a href="downloads/reval.pdf">Revaluation Form</a></li>
+                <li><a href="downloads/provisional.pdf">Provisional Form</a></li>
             </ul>
         </li>
         <li><a href="contactus.php">Placement Queries</a></li>
