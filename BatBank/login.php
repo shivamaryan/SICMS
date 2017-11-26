@@ -1,57 +1,30 @@
 <?php
-session_start();
-error_reporting(0);
-include("connect.php");
-
-if(($_REQUEST['error'])=='nologin')
-    $logininfo="Please Sign In to Continue";
-else if(($_REQUEST['error'])=='forgetpass')
-    $logininfo="Please contact the nearest branch";
-if(isset($_SESSION['customerid']))
-{
-	header("Location: accountalerts.php"); exit(0);
-}
-if(isset($_SESSION['adminid']))
-{
-    header("Location: admindashboard.php");
-}
-if ((isset($_REQUEST['login'])))
-{
-$password = mysql_real_escape_string($_REQUEST['password']);
-$logid= mysql_real_escape_string($_REQUEST['login']);
-$query="SELECT * FROM customers WHERE loginid='$logid' AND accpassword='$password'";
-$res=  mysql_query($query);
-if(mysql_num_rows($res) == 1)
-	{
-		while($recarr = mysql_fetch_array($res))
-		{
-			
-		$_SESSION['customerid'] = $recarr['customerid'];
-		$_SESSION['ifsccode'] = $recarr['ifsccode'];
-		$_SESSION['customername'] = $recarr['firstname']. " ". $recarr['lastname'];
-		$_SESSION['loginid'] = $recarr['loginid'];
-		$_SESSION['accstatus'] = $recarr['accstatus'];
-		$_SESSION['accopendate'] = $recarr['accopendate'];
-		$_SESSION['lastlogin'] = $recarr['lastlogin'];		
-		}
-		$_SESSION["loginid"] =$_POST["login"];
-		header("Location: accountalerts.php");
-	}
-else{
-	$res = mysql_query("SELECT * FROM employees WHERE loginid='$logid' AND password='$password'");
-
-
-	if(mysql_num_rows($res) == 1)
-	{
-		$_SESSION["adminid"] =$_POST["login"];
-		header("Location: admindashboard.php");
-	}
-	else
-	{
-		$logininfo = "Invalid Username or password entered";
-	}
-}
-}
+    error_reporting(E_ALL);
+ini_set("display_errors", 1);
+    if(isset($_POST['submit']))
+    {
+        include('connect.php');
+        $user     = $_POST['user'];
+        $pass     = $_POST['pass'];
+        $query="SELECT password FROM student_login WHERE userid='$user'";
+        $result=mysqli_query($con,$query);
+        if($result->num_rows==0)
+        {
+            $logininfo="no such user exists";   
+        }
+        else
+        {
+            $res=$result->fetch_assoc();
+            if($res['password']==$pass)
+            {
+                $logininfo="logging in";
+                //enter below the destination for after login page 
+                //header('Location:adminloggedin.php');
+            }
+            else
+            $logininfo="username or password does not match";
+        }
+    }
 ?>
 <html>
 <head>
@@ -103,16 +76,16 @@ else{
             <div class="loginset">
                 <p>
                     <label class="Ltext">Username</label>
-                    <input type="text" name="login" class="loginput">
+                    <input type="text" name="user" class="loginput">
                 </p>
                 <p>
                     <label class="Ltext" for="password">Password</label>
-                    <input type="password" name="password" class="loginput">
+                    <input type="password" name="pass" class="loginput">
                 </p>
             </div>
             <p class="p-container">
                 <a href="login.php?error=forgetpass">Forgot password ?</a><br/>
-                <input type="submit" name="go" id="go" value="Log in" class="loginput">
+                <input type="submit" name="submit" value="Log in" class="loginput">
             </p>
         </form>
     </div>
