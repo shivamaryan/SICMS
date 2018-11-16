@@ -1,5 +1,5 @@
 # SICMS
-We successfully completed a department project, involving the digitalization of the paper based Student Index Card Management System.<br>
+We successfully completed a department project, involving the digitization of the paper based Student Index Card Management System.<br>
 We have some base functionalities, where some of the work could be done by the user(Student) <br>
 and some of which, has Admin(Staff) functionalities.<br>
 We will attach a video soon, as we believe, visualiaztion is always better than text reading.<br>
